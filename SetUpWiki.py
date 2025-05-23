@@ -47,7 +47,7 @@ def django_template_blockify(og_content):
 
    
 def rename_and_relocate(file):
-   os.replace(file,os.getcwd()+"\\"+file.name.replace("%27",""))
+   os.replace(file,os.getcwd()+"\\pages\\"+file.name.replace("%27",""))
 
 
 
@@ -66,7 +66,7 @@ for file in os.scandir(dir):
         write_modified(redact, file)
         rename_and_relocate(file)
 try:
-    shutil.rmtree(os.getcwd()+"\\files")
+    shutil.rmtree(os.getcwd()+"\\pages\\files")
 except:
     pass
-shutil.move(dir+"\\files",os.getcwd())
+shutil.move(dir+"\\files",os.getcwd()+"\\pages")
